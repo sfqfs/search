@@ -33,6 +33,7 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          artifacts: "cmd/algoliaupload/main"
+          asset_path: "cmd/algoliaupload/main"
+          asset_name: "main"
           bodyFile: "Executable Program"
           token: ${{ secrets.YOUR_GITHUB_TOKEN }}
