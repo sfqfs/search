@@ -31,9 +31,9 @@ jobs:
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: "cmd/algoliaupload/main"
           asset_name: "main"
-          bodyFile: "Executable Program"
-          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
