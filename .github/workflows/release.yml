@@ -2,8 +2,8 @@ name: 测试
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - "*"
   # Sequence of patterns matched against refs/tags
 
 
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout Github Code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set Up Golang Environment
         uses: actions/setup-go@v2
