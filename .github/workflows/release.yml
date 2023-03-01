@@ -24,6 +24,7 @@ jobs:
 
       - name: Create Release
         id: create_release
+        uses: actions/create-release@v1
         run: |
           echo "Building linux amd64 binary..."
           cd cmd/algoliaupload
